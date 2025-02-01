@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" type="text/css" href="../styles.css" />
+    <title>Your Local Time</title>
+    <style>
+      body {
+        background-color: aqua;
+        color: black;
+      }
+      .center {
+        display: flex;
+        height: 100vh;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+      }
+      #clock {
+        font-size: 40px;
+        background-color: pink;
+        padding: 20px 50px;
+        margin-top: 10px;
+        border-radius: 30px;
+      }
+    </style>
+    <h2 style="display: block;color: pink; display: flex;justify-content: center;">HI GUYS WELCOME TO MY stopwatch</h2>
+  </head>
+  <body>
+    <nav>
+      <a href="/" aria-current="page">Home</a>
+     
+    </nav>
+    <div class="center">
+      <div id="banner"><span>time starts now</span></div>
+      <div id="clock"></div>
+      <h5><b>DON'T STOP UNTIL YOU ARE EXHAUSTED</b></h5>
+    </div>
+    <script>
+        const clock=document.querySelector('#clock')
+// let date=new Date();
+// console.log(date.toLocaleTimeString());
+
+ctr=0;hr=0;min=0;
+setInterval(function(){
+  ctr++;if (ctr>=60){ min=min+1;ctr=ctr-60;}
+  if(min>60){hr=hr+1;min=min-60;}
+  clock.innerHTML=hr+":"+min+":"+ctr;
+},1000)
+    </script>
+  </body>
+</html>
